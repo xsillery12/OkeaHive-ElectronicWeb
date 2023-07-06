@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+/* Mengatur keseluruhan html */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+/* Mengatur bagian html */
+html {
+    font-size: 62.5%;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+    
+}
+
+/* Mengatur bagian btn */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #000000;
+    background: #EDE9E3;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover {
+    background: #CDC6C3;
+}
+
+/* Mengatur bagian header */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #B2AC88;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+/* Mengatur bagian header class logo */
+header .logo {
+    color: #000000;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+/* Mengatur bagian header class navbar */
+header .navbar a{
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: #000000;
+}
+
+header .navbar .active,
+header .navbar a:hover {
+    color: #B2AC88;
+    background: #EDE9E3;
+}
+
+/* Mengatur bagian header class icons */
+header .icons .fa-magnifying-glass,
+header .icons .fa-heart,
+header .icons .fa-cart-shopping {
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+    border-radius: 55%;
+    background: #EDE9E3;
+}
+
+header .icons .fa-user {
+    cursor: pointer;
+    margin-left: 3.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 10.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+    border-radius: 10px;
+    background: #EDE9E3;
+}
+
+header .icons i:hover,
+header .icons a:hover {
+    color: #000000;
+    background: #CDC6C3;
+}
+
+
+header .icons #menu-bars {
+    display: none;
+}  
+
+/* Mengatur tampilan cart */
+header .cart {
+    position: fixed;
+    top: 0;
+    right: -110%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: white;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: .3s;
+}
+
+header .cart.active {
+    right: 0;
+}
+
+header .cart-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+header .cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+header .cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+header .detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+header .cart-product-title {
+    font-size: 1.47rem;
+    padding-top: 1.6rem;
+}
+
+header .cart-price {
+    font-size: 1.6rem;
+}
+
+header .cart-quantity {
+    border: 1px solid black;
+    outline-color: var(--light-color);
+    width: 3rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+header .fa-trash {
+    font-size: 20px;
+    color: #EDE9E3;
+    cursor: pointer;
+}
+
+header .fa-trash:hover {
+    font-size: 20px;
+    color: #B2AC88;
+    cursor: pointer;
+}
+
+header .total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+
+header .total-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+header .total-price {
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+}
+
+header .btn {
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: #EDE9E3;
+    color: black;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+header #close {
+    position: absolute;
+    top: 1rem;
+    right: 0.8em;
+    font-size: 2.7rem;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* Mengatur tampilan search form */
+#search-form {
+    position: fixed;
+    top: -110%; left: 0;
+    height: 100%; width: 100%;
+    z-index: 1004;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: .1rem solid #fff;
+    padding: 1rem 0;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder {
+    color: #B2AC88;
+}
+
+#search-form #search-box::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+#search-form label {
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover {
+    color: #B2AC88;
+}
+
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+}
+
+#search-form #close:hover {
+    color: #B2AC88;
+}
+
+/* Mengatur tampilan add to cart counter */
+#cart-icon {
+    position: relative;
+}
+  
+#cart-counter {
+    position: absolute;
+    top: 10px;
+    right: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+/* Mengatur tampilan produk detail */
+.small-container {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.single-product {
+    margin-top: 80px;
+}
+
+.small-img {
+    width: 100px; /* Ubah sesuai dengan ukuran yang diinginkan */
+    height: 80px; /* Ubah sesuai dengan ukuran yang diinginkan */
+  }  
+
+.small-img-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.small-img-col {
+    flex-basis: 20%;
+    padding: 40px 0;
+    cursor: pointer;
+}
+
+.single-product .col-2 img {
+    padding: 0;
+    align-items: center;
+}
+
+.single-product .col-2 {
+    padding: 20px;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 h1 {
+    margin-top: 8px;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.single-product select {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.single-product h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.single-product h4 {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+p {
+    color: #555;
+    font-size: 15px;
+}
+
+
+/* Mengatur tampilan Footer */
+.footer .box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1;
+    margin-right: 1.5rem;
+}
+
+.footer .box:last-child {
+    margin-right: 0;
+}
+
+.footer .box-container .box h3 {
+    padding: .5rem 0;
+    font-size: 2.2rem;
+    color: black;
+}
+
+.footer .box-container .box a {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.4rem;
+    color: var(--light-color);
+}
+
+.footer .box-container .box a:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 1.8rem;
+    color: black;
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span {
+    color: #B2AC88;
+}
+

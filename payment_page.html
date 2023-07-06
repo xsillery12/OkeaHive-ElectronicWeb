@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OkeaHive. - Electronic Store</title>
+    <link rel="icon" href="img/icon2.svg" type="image/svg">
+
+    <!-- Installasi Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Installasi font cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Installasi file css -->
+    <link rel="stylesheet" href="css/payment_page.css">
+</head>
+<body>
+
+  <!-- Mulai Bagian Payment -->
+    <header>
+        <h1>Detail Pembelian</h1>
+    </header>
+
+  <div class="container">
+    <img class="qr-code" src="img/QRcode.png" alt="QR Code">
+    <div class="virtual-account">Virtual Account: 1234567890</div>
+    <div class="note">Silakan transfer ke virtual account di atas untuk menyelesaikan pembelian. Jika sudah melakukan pembayaran silahkan klik tombol
+        "Selesai". 
+    </div>
+    <div class="countdown">Waktu Pembayaran: <span id="timer"></span></div>
+    <a href="homepage.php"><button class="btn">Selesai</button></a>
+  </div>
+
+  <!-- Selesai Bagian Payment -->
+    
+  <script src="js/payment_page.js"></script>
+  
+</body>
+</html>

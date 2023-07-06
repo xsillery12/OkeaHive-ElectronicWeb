@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OkeaHive. - Electronic Store</title>
+    <link rel="icon" href="img/icon2.svg" type="image/svg">
+
+    <!-- Installasi file css -->
+    <link rel="stylesheet" href="css/checkout_page.css">
+</head>
+<body>
+    
+    <!-- Main Container -->
+    <main class="container">
+        <h1 class="heading">
+            <ion-icon name="cart-outline"></ion-icon> Checkout
+        </h1>
+        
+        <div class="item-flex">
+
+            <!-- Checkout section -->
+            <section class="checkout">
+                <h2 class="section-heading">Detail Pembayaran</h2>
+            
+                <div class="payment-form">
+                    <div class="payment-method">
+                        <button id="creditCardBtn" class="method selected" onclick="selectPaymentMethod('creditCardForm', 'creditCardBtn')">
+                            <img src="img/mastercard.svg" alt=""><img src="img/visa.svg" alt="">
+                            <span>Kartu Kredit</span>
+                        </button>
+                
+                        <button id="gopayBtn" class="method" onclick="selectPaymentMethod('gopayForm', 'gopayBtn')">
+                            <img src="img/payment-1.png" alt="">
+                            <span>GOPAY</span>
+                        </button>
+                
+                        <button id="bankTransferBtn" class="method" onclick="selectPaymentMethod('bankTransferForm', 'bankTransferBtn')">
+                            <img src="img/bank.png" alt="">
+                            <span>Bank Transfer</span>
+                        </button>
+                    </div>
+            
+                    <div id="bankSelection" class="bank-selection" style="display: none;">
+                        <h3 for="bankOptions">Pilih Jenis Bank</h3>
+                        <select id="bankOptions">
+                          <option value="BCA">BCA</option>
+                          <option value="BNI">BNI</option>
+                          <option value="Mandiri">Mandiri</option>
+                        </select>
+                      </div>
+            
+                    <form action="#">
+                        <div id="creditCardForm" class="payment-details">
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <h3>Detail Pembayaran</h3>
+                                <span class="accordion-arrow"></span>
+                            </div>
+                            <div class="accordion-content">
+                    <div class="cardholder-name">
+                        <label for="cardholder-name" class="label-default">Cardholder name</label>
+                        <input type="text" name="cardholder-name" id="cardholder-name" class="input-default">
+                    </div>
+
+                    <div class="card-number">
+                        <label for="card-number" class="label-default">Card number</label>
+                        <input type="number" name="card-number" id="card-number" class="input-default">
+                    </div>
+
+                    <div class="input-flex">
+                        <div class="expire-date">
+                            <label for="expire-date" class="label-default">Expiration date</label>
+                            <div class="input-flex">
+                                <input type="number" name="day" id="expire-date" placeholder="31" min="1" max="31"
+                                    class="input-default">
+                                /
+                                <input type="number" name="month" id="expire-date" placeholder="12" min="1" max="12"
+                                    class="input-default">
+                            </div>
+                        </div>
+                        <div class="cvv">
+                            <label for="cvv" class="label-default">CVV</label>
+                            <input type="number" name="cvv" id="cvv" class="input-default">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3>Alamat Pengiriman</h3>
+                    <span class="accordion-arrow"></span>
+                </div>
+                <div class="accordion-content">
+                    <div class="address">
+                        <label for="full-name" class="label-default">Nama Lengkap</label>
+                        <input type="text" name="full-name" id="full-name" class="input-default">
+                    </div>
+
+                    <div class="address">
+                        <label for="street-address" class="label-default">Alamat Lengkap</label>
+                        <input type="text" name="street-address" id="street-address" class="input-default">
+                    </div>
+
+                    <div class="input-flex">
+                        <div class="address">
+                            <label for="rt" class="label-default">RT</label>
+                            <input type="text" name="rt" id="rt" class="input-default">
+                        </div>
+                        <div class="address">
+                            <label for="rw" class="label-default">RW</label>
+                            <input type="text" name="rw" id="rw" class="input-default">
+                        </div>
+                    </div>
+
+                    <div class="address">
+                        <label for="city" class="label-default">Kota</label>
+                        <input type="text" name="city" id="city" class="input-default">
+                    </div>
+
+                    <div class="address">
+                        <label for="province" class="label-default">Provinsi</label>
+                        <input type="text" name="province" id="province" class="input-default">
+                    </div>
+
+                    <div class="address">
+                        <label for="province" class="label-default">Kode Pos</label>
+                        <input type="text" name="post-code" id="post-code" class="input-default">
+                    </div>
+
+                    <div class="address">
+                        <label for="phone-number" class="label-default">Nomor Telepon</label>
+                        <input type="tel" name="phone-number" id="phone-number" class="input-default">
+                    </div>
+
+                    <div class="address">
+                        <label for="email" class="label-default">Email</label>
+                        <input type="email" name="email" id="email" class="input-default">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <a href="payment_page.html"><button class="btn btn-primary">
+        <b>Bayar</b><span id="payAmount">2,170,000</span>
+    </button></a>
+</section>
+
+
+
+            <!-- Cart Section -->
+
+            <section class="cart">
+                <div class="cart-item-box">
+                    <h2 class="section-heading">Keranjangmu</h2>
+                    <div class="product-card">
+                        <div class="card">
+                            <div class="img-box">
+                                <img src="img/product-1.png" alt="Air Purifier" width="100px" class="product-img">
+                            </div>
+
+                            <div class="detail">
+                                <h4 class="product-name">Samsung AX34R STD Air Purifier</h4>
+                                <div class="wrapper">
+
+                                    <div class="product-qty">
+                                        <button id="decrement-1">
+                                            <ion-icon name="remove-outline"></ion-icon>
+                                        </button>
+
+                                        <span id="quantity-1">1</span>
+
+                                        <button id="increment-1">
+                                            <ion-icon name="add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+
+                                    <div class="price">
+                                        Rp <span id="price-1">2,170,000</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="product-close-btn">
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="card">
+                            <div class="img-box">
+                                <img src="img/product-15.png" alt="Air Purifier" width="100px" class="product-img">
+                            </div>
+
+                            <div class="detail">
+                                <h4 class="product-name">Sony PlayStation 5</h4>
+                                <div class="wrapper">
+
+                                    <div class="product-qty">
+                                        <button id="decrement-2">
+                                            <ion-icon name="remove-outline"></ion-icon>
+                                        </button>
+
+                                        <span id="quantity-2">1</span>
+
+                                        <button id="increment-2">
+                                            <ion-icon name="add-outline"></ion-icon>
+                                        </button>
+                                    </div>
+
+                                    <div class="price">
+                                        Rp <span id="price-2">6,780,000</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="product-close-btn">
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="discount-token">
+                        <label for="token" class="label-default">Kode Promo</label>
+                        <div class="wrapper-flex">
+                            <input type="text" name="discount-token" id="discount-token" placeholder="Masukkan kode promo" class="input-default">
+                            <button class="btn btn-outline">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="subtotal">
+                            <span>Subtotal</span> <span></span><span id="subtotal-1">2,170,000</span></span>
+                        </div>
+
+                        <div class="tax">
+                            <span>PPN</span> <span><span id="tax">11%</span></span>
+                        </div>
+
+                        <div class="shipping">
+                            <span>Ongkos Kirim</span> <span><span id="shipping">20,000</span></span>
+                        </div>
+
+                        <div class="total">
+                            <span>Total</span> <span></span><span id="total"> 2,428,700</span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Installasi file js -->
+    <script src="js/checkout_page.js"></script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+:root {
+    --onyx: hsl(0, 0%, 25%);
+    --azure: hsl(219, 77%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --platinum: hsl(0, 0%, 91%);
+    --gainsboro: hsl(0, 0%, 90%);
+    --red-salsa: hsl(0, 77%, 60%);
+    --dim-gray: hsl(0, 0%, 39%);
+    --davys-gray: hsl(0, 0%, 30%);
+    --spanish-gray: hsl(0, 0%, 62%);
+    --quick-silver: hsl(0, 0%, 64%);
+}
+
+/* Mengatur keseluruhan html */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+ion-icon, span {
+    display: inline-block;
+}
+
+label, img {
+    display: block;
+}
+
+input {
+    font: inherit;
+    width: 100%;
+    border: none;
+}
+
+input:focus {
+    outline: 2px solid var(--azure);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
+}
+
+/* Mengatur main container */
+.container {
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--onyx);
+    border-bottom: 1px solid var(--gainsboro);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading ion-icon {
+    font-size: 40px;
+}
+
+.item-flex {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Mengatur bagian section checkout */
+.checkout {
+    width: 70%;
+    padding: 40px;
+    background: var(--white);
+    border-right: 1px solid var(--gainsboro);
+}
+
+.section-heading {
+    color: var(--onyx);
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.payment-form {
+    margin-bottom: 40px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.payment-method .method {
+    border: 1px solid var(--quick-silver);
+    border-radius: 15px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.payment-method .method:hover,
+.payment-method .method.selected {
+    border: 1px solid white;
+    background: #B2AC88;
+    color: #fff;
+}
+
+.payment-method .selected {
+    border-color: black;
+}
+
+.payment-method .method .checkmark {
+    margin-left: auto;
+    color: var(--quick-silver);
+}
+
+.payment-method .method .fill {
+    color: var(--azure);
+}
+
+.bank-selection {
+    margin-top: 10px;
+}
+
+.bank-selection h3 {
+    margin: 15px;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bank-selection select {
+    margin: 15px;
+    border-radius: 15px;
+    width: 30%;
+    padding: 15px 20px 15px 10px;
+    gap: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.bank-selection select:hover {
+    border: 1px solid white;
+    background: #B2AC88;
+    color: #fff;
+}
+
+.address-form .selected-bank {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.label-default {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: var(--spanish-gray);
+}
+
+.input-default {
+    background: var(--platinum);
+    border-radius: 5px;
+    color: var(--davys-gray);
+}
+
+.payment-form input {
+    padding: 13px 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.cardholder-name, 
+.card-number {
+    margin-bottom: 20px;
+}
+
+.card-number input,
+.cvv input {
+    letter-spacing: 3px;
+}
+
+.input-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-flex .expire-date,
+.input-flex .cvv {
+    width: 50%;
+}
+
+
+.expire-date .input-flex {
+    color: var(--spanish-grey);
+    gap: 13px;
+}
+
+.expire-date .input-flex input {
+    text-align: center;
+}
+
+.btn {
+    border-radius: 12px;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+.btn:focus {
+    color: white;
+    background: var(--azure);
+    outline: 2px solid var(--azure);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background: white;
+    font-weight: normal;
+    color: black;
+    border: 1px solid black;
+    padding: 13px 45px;
+}
+
+.btn-primary:hover {
+    background: #B2AC88;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-primary b {
+    margin-right: 10px;
+}
+
+.accordion {
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .accordion-header h3 {
+    margin: 0;
+  }
+  
+  .accordion-arrow {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-content {
+    padding: 10px;
+    display: none;
+  }
+
+  .rotate {
+    transform: rotate(315deg);
+}
+  
+
+/* Mengatur section Cart */
+
+.cart {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.cart-item-box {
+    padding: 40px;
+    margin-bottom: auto;;
+}
+
+.product-card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.product-card .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card .product-img {
+    border-radius: 10px;
+}
+
+.card .detail .product-name {
+    font-weight: normal;
+    font-size: 18px;
+    color: var(--dim-gray);
+    margin-bottom: 10px;
+}
+
+.card .detail .wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.product-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-qty button {
+    background: var(--platinum);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-qty button:active,
+.product-close-btn:active ion-icon {
+    transform: scale(0.95);
+}
+
+.product-qty button ion-icon {
+    --ionicon-stroke-width: 60px;
+    font-size: 10px;
+}
+
+.product-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.product-close-btn ion-icon {
+    font-size: 25px;
+    color: var(--quick-silver);
+}
+
+.product-close-btn:hover ion-icon {
+    color: var(--red-salsa);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+.discount-token {
+    flex: 0 0 auto;
+    padding: 10px 30px 25px 25px;
+    border-top: 1px solid var(--gainsboro);
+    border-bottom: 1px solid var(--gainsboro);
+}
+
+.wrapper-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.wrapper-flex input {
+    padding: 20px 20px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.btn-outline {
+    padding: 10px 25px;
+    border: 1px solid black;
+    color: black;
+}
+
+.btn-outline:hover {
+    background: #B2AC88;
+    color: white;
+    border: 1px solid white;
+}
+
+.amount {
+    flex: 1 1 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.amount > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount > div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.amount .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--onyx);
+}
