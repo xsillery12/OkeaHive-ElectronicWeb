@@ -16,6 +16,7 @@ var userIcon = document.querySelector(".fa-solid.fa-user");
 var subMenuWrap = document.querySelector(".sub-menu-wrap");
 
 userIcon.addEventListener("click", function () {
+  event.preventDefault();
   subMenuWrap.classList.toggle("active");
 });
 

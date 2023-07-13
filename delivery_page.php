@@ -32,9 +32,9 @@ session_start();
 
     <!-- Mulai Navbar -->
     <nav class="navbar">
-      <a href="index.html">Beranda</a>
-      <a href="#promo">Promo</a>
-      <a href="#produk">Produk</a>
+      <a href="homepage.php">Beranda</a>
+      <a href="homepage.php#promo">Promo</a>
+      <a href="homepage.php#produk">Produk</a>
 
       <!-- Membuat dropdown menu -->
       <div class="sub-menu-wrap" id="dropdown-menu">
